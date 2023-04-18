@@ -125,7 +125,7 @@ EOF
         CLICKHOUSE_DATABASE = "[[.clickhouse_ag_db]]"
         CLICKHOUSE_USER = "[[.app.env.app_clickhouse_user]]"
         MAX_INSTANCES = "[[.app.env.max_instances]]"
-        PAY_URL = "[[.app.env.payments_url]]"
+        PAY_URL = "[[.app.env.pay_url]]"
       }
       resources {
         cpu    =  [[.app.resources.cpu]]
