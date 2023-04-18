@@ -10,7 +10,7 @@ app:
   stand: dev
   port: 3030
   vault:
-    dynamic_secret: "database/creds/mysql-c2-dev"
+    dynamic_secret: "database/creds/mysql-dev"
     app_mysql_user_pass: "mysql/mysql-01/app_dev"
     app_clickhouse_pass: "clickhouse/user_app_dev"
   env:
