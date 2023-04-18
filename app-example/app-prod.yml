@@ -1,0 +1,28 @@
+---
+# global vars
+image_tag: release-latest
+image_registry: "registry/app"
+docker_login: user2pull
+app_name: app
+app_tag: app
+
+app:
+  stand: prod
+  port: 3030
+  vector_tag: app
+  vault:
+    app_mysql_user_pass: "mysql_cluster/mysql-01/app_client_prod"
+    app_clickhouse_pass: "clickhouse/clickhouse-01/user_app_prod"
+  env:
+    app_mysql_user: app_client_prod
+    app_clickhouse_user: user_app_prod
+    max_instances: 4
+    pay_url: "https://pay.example.net"
+  region: "fsn"
+  datacenters:  "fsn"
+  namespace: "prod"
+  resources:
+    cpu: 2548
+    memory: 3048
+  group:
+    count: 2

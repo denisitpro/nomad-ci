@@ -1,0 +1,34 @@
+---
+# global vars
+image_tag: latest
+image_registry: "registry/app"
+docker_login: user2pull
+app_name: app
+app_tag: app
+
+app:
+  stand: dev
+  port: 3030
+  vault:
+    dynamic_secret: "database/creds/mysql-dev"
+    app_mysql_user_pass: "mysql/mysql-01/app_dev"
+    app_clickhouse_pass: "clickhouse/user_app_dev"
+  env:
+    app_mysql_user: app_dev
+    app_clickhouse_user: user_app_dev
+    nats_user: user_app
+    max_instances: 4
+    pay_url: "https:/pay.example.com"
+  region: "fsn"
+  datacenters:  "fsn"
+  namespace: "dev"
+  task:
+    config:
+      logging:
+        config:
+          fluentd_address: vector.example.com:24224
+  resources:
+    cpu: 1024
+    memory: 2048
+  group:
+    count: 2
